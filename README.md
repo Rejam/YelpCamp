@@ -1,2 +1,0 @@
-# YelpCamp
-WebDevBootcamp App

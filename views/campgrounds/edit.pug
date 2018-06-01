@@ -1,0 +1,48 @@
+include ../partials/header
+
+.container
+  .row
+    .col-md-12.m-auto
+      h1.display-1= campground.name
+      form.mt-5(action='/campgrounds/'+campground._id+'?_method=PUT' method='POST')
+        
+        .form-group
+          label(for='name') Edit campground name
+          input.form-control#name(
+            type='text' 
+            name='camp[name]' 
+            value=campground.name 
+            placeholder='Camp name')
+
+        .form-group
+          label(for='price') Edit campground price / night
+          input.form-control#price(
+            type='number' 
+            name='camp[price]' 
+            value=campground.price 
+            placeholder='Camp price / night'
+            min='0.00'
+            step='0.01')
+            
+        .form-group
+          label(for='image') Edit campground image
+          input.form-control#image(
+            type='text' 
+            name='camp[image]' 
+            value=campground.image 
+            placeholder='Camp image')
+        
+        .form-group
+          label(for='desc') Edit campground description
+          textarea.form-control#desc(
+            name='camp[description]' 
+            placeholder='Camp description')= campground.description
+        
+        .form-group
+          button.form-control.btn.btn-lg.btn-primary Submit!
+        
+        .form-group
+          a.form-control.btn.btn-link(href='/campgrounds') Go Back
+
+include ../partials/footer
+

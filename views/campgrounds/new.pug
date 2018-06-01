@@ -1,0 +1,45 @@
+include ../partials/header
+
+.container
+  .row
+    .col-md-12.m-auto
+      h1 Create a New Campground
+      form.mt-5(action='/campgrounds' method='POST')
+      
+        .form-group
+          label(for='name') Enter the campground name
+          input.form-control#name(
+            type='text' 
+            name='camp[name]' 
+            placeholder='Camp name')
+
+        .form-group
+          label(for='price') Enter the price / night
+          input.form-control#price(
+            type='number' 
+            name='camp[price]' 
+            placeholder='Camp price / night'
+            min='0.00'
+            step='0.01')
+            
+        .form-group
+          label(for='image') Enter the image URL
+          input.form-control#image(
+            type='text' 
+            name='camp[image]' 
+            placeholder='Camp image')
+            
+        .form-group
+          label(for='desc') Enter a description of the camp
+          textarea.form-control#desc(
+            name='camp[description]' 
+            placeholder='Camp description')
+        
+        .form-group
+          button.form-control.btn.btn-lg.btn-primary Submit!
+        
+        .form-group
+          a.form-control.btn.btn-link(href='/campgrounds') Go Back
+
+include ../partials/footer
+

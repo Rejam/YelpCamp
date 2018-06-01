@@ -1,0 +1,17 @@
+include ../partials/header
+
+.container
+  .row
+    .col-md-8.m-auto
+      h1.display-1= campground.name
+      form.mt-5(action='/campgrounds/'+campground._id+'/comments' method='POST')
+        .form-group
+          label(for='comment') Add a new comment
+          input.form-control#comment(type='text' name='text' placeholder='Your comment')
+        .form-group
+          .form-control.btn.btn-lg.btn-primary Submit!
+        .form-group
+          .form-control.btn.btn-link(href='/campgrounds/'+campground._id) Go Back
+
+include ../partials/footer
+

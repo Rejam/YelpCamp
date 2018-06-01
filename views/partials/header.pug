@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title YelpCamp
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous")
+    link(rel='stylesheet' href='/css/main.css')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+  body
+    nav.navbar.navbar-expand-md.navbar-light.bg-light
+      a.navbar-brand(href="/") YelpCamp
+      button.navbar-toggler(data-toggle='collapse' data-target='#nav-menu')
+        span.navbar-toggler-icon
+      .collapse.navbar-collapse#nav-menu
+        ul.navbar-nav.ml-auto
+          if currentUser
+            li.nav-item.mr-4
+              span.navbar-text Signed in as #{currentUser.username}
+            li.nav-item
+              a.nav-link(href='/logout') Logout
+          else
+            li.nav-item
+              a.nav-link(href='/register') Sign Up
+            li.nav-item 
+              a.nav-link(href='/login') Login
+    if error.length > 0
+      .container
+        .alert.alert-danger= error
+    if success.length > 0
+      .container
+        .alert.alert-success= success
+
+              

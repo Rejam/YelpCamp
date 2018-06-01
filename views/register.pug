@@ -1,0 +1,19 @@
+include partials/header
+
+.container
+  .row
+    .col-md-8.m-auto
+      h1.display-1 Sign Up
+      form.mt-5(action='/register' method='POST')
+        .form-group
+          label(for='username') Choose your username
+          input.form-control#username(type='text' name='username' placeholder='Username')
+        .form-group
+          label(for='password') Choose your password
+          input.form-control#password(type='password' name='password' placeholder='Password')
+        .form-group
+          button.form-control.btn.btn-primary.btn-lg Sign Up
+        .form-group
+          a.form-control.btn.btn-link(href='/campgrounds') Go Back
+
+include partials/footer

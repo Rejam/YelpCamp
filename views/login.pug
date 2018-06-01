@@ -1,0 +1,19 @@
+include partials/header
+
+.container
+  .row
+    .col-md-8.m-auto
+      h1.display-1 Login
+      form.mt-5(action='/login' method='POST')
+        .form-group
+          label(for='username') Enter your username
+          input.form-control#username(type='text' name='username' placeholder='Username')
+        .form-group
+          label(for='password') Enter you password
+          input.form-control#password(type='password' name='password' placeholder='Password')
+        .form-group
+          button.form-control.btn.btn-lg.btn-primary Login!
+        .form-group
+          a.form-control.btn.btn-link(href='/campgrounds') Go Back
+  
+include partials/footer
